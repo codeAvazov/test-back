@@ -7,7 +7,7 @@ const db = require("./db.js");
 const route = require("./router/data.js");
 
 app.use(express.json());
-app.use("/", (req, res) => res.send("Hello !"));
+// app.use("/", (req, res) => res.send("Hello !"));
 app.use("/api", route);
 
 const PORT = process.env.PORT || 5555;
