@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-async function db() {
+async function db(path) {
   try {
     await mongoose.connect(
-      "mongodb+srv://ulug:test1717@cluster0.wvqoe.mongodb.net/rg1db?retryWrites=true&w=majority"
+      path
     );
   } catch (error) {
     throw new Error(error);
