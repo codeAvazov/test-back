@@ -5,10 +5,12 @@ const app = express();
 //
 const db = require("./db.js");
 const route = require("./router/data.js");
+const auth = require("./router/auth.js");
 
 app.use(express.json());
 // app.use("/", (req, res) => res.send("Hello !"));
 app.use("/api", route);
+app.use("/auth", auth);
 
 const PORT = process.env.PORT || 5555;
 const DB_PATH =

@@ -41,7 +41,10 @@ class DataController {
 
   static async add(req, res) {
     try {
+      console.log(req.body);
+
       const { name, ...body } = req.body;
+
       if (!name)
         return res.status(400).json({ msg: "Please enter the name !" });
 
@@ -78,7 +81,6 @@ class DataController {
   static async delete(req, res) {
     try {
       const { id } = req.params;
-      console.log(id);
       await DataModel.findByIdAndRemove(id);
 
       return res.status(200).json({ msg: "Todo success deleted !" });
